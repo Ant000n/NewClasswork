@@ -1,15 +1,11 @@
 package com.example.newclasswork
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
-import androidx.lifecycle.Observer
 import com.example.newclasswork.fragment.BlanFragment
-import com.example.newclasswork.network.UserListResponse
+import com.example.newclasswork.fragment.FantFragment
+import com.example.newclasswork.network.ResultItem
 
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,7 +17,16 @@ class MainActivity : AppCompatActivity() {
             .beginTransaction()
             .replace(R.id.container, BlanFragment.newInstance())
             .commit()
+
+
     }
 
 
+    fun showProfile(id: String){
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.container, FantFragment.newInstance(id))
+            .addToBackStack("")
+            .commit()
+    }
 }
