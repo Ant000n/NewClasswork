@@ -31,6 +31,8 @@ class RemoteRepository() : Repository {
         token
     )
 
+    override  fun getUser()
+
     private fun createApi() {
         val retrofit = Retrofit.Builder()
             .baseUrl("https://gorest.co.in/")
