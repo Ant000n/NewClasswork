@@ -25,6 +25,7 @@ class DataAdapter(
         holder.itemView.setOnClickListener {
             callback?.itemClicked(list[holder.adapterPosition])
         }
+
     }
 
     override fun getItemCount() = list.size
