@@ -1,6 +1,7 @@
 package com.example.newclasswork.repository
 
 import com.example.newclasswork.network.UserListResponse
+import com.example.newclasswork.network.UserResponse
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -31,8 +32,11 @@ class RemoteRepository() : Repository {
         token
     )
 
-    override  fun getUser()
-
+    override fun getUser(id: Int?): Call<UserResponse> = api.getUser(
+        id,
+        format,
+        token
+    )
     private fun createApi() {
         val retrofit = Retrofit.Builder()
             .baseUrl("https://gorest.co.in/")

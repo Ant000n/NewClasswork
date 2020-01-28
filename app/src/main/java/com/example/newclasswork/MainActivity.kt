@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun showProfile(id: String){
+    fun showProfile(id: Int){
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.container, FantFragment.newInstance(id))
